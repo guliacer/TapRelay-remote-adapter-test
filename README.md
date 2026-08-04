@@ -6,7 +6,7 @@ downloads or executes DLL, EXE, PowerShell, JavaScript, or other program code.
 
 Default catalog URL:
 
-`https://raw.githubusercontent.com/guliacer/TapRelay-remote-adapter-test/main/catalog.json`
+`https://github.com/guliacer/TapRelay-remote-adapter-test/raw/refs/heads/main/catalog.json`
 
 ## Local smoke test
 
