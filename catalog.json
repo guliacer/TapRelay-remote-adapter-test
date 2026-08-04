@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "2026.08.04.2",
+  "version": "2026.08.04.3",
   "adapters": [
     {
       "appKey": "remote-adapter-demo",
