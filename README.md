@@ -47,6 +47,15 @@ without shipping a new executable. The WorkBuddy rule uses
 success, failure, permission, question, cancellation, and duplicate filtering
 semantics.
 
+The catalog also supports a data-only close reminder rule. The `leigod` rule
+matches only `leigod.exe` below `%PROGRAMFILES(X86)%\\LeiGod_Acc`, so another
+same-named executable in a different directory cannot trigger it. The PC binary
+uses WMI process start/stop events, a bounded polling fallback, and the Windows
+session-ending event. Its notification title and body are defined in the rule;
+`actionUrl` is optional and must be an official `https://` or `weixin://` URI.
+For a locally supplied official mini-program deep link, set
+`TAPRELAY_LEIGOD_MINIPROGRAM_URL`; an empty value keeps the reminder functional
+and opens TapRelay when the user taps it.
 After the pull request is merged, a running TapRelay instance checks the raw catalog
 every five minutes. It applies a valid change without restart or repackaging. If the
 network is unavailable or the catalog fails validation, the last valid local cache

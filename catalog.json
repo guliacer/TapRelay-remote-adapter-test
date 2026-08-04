@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "2026.08.04.3",
+  "version": "2026.08.04.4",
   "adapters": [
     {
       "appKey": "remote-adapter-demo",
@@ -27,6 +27,20 @@
       "parser": "workbuddy-acp",
       "recursive": true,
       "logPaths": ["%USERPROFILE%\\.workbuddy\\logs\\*.log"]
+    },
+    {
+      "appKey": "leigod",
+      "displayName": "雷神加速器",
+      "brandColor": "#FF7A00",
+      "iconPath": "icons/leigod.png",
+      "closeReminderEnabled": true,
+      "imageNames": ["leigod.exe"],
+      "installRoots": ["%PROGRAMFILES(X86)%\\LeiGod_Acc"],
+      "notifyOnSessionEnding": true,
+      "closeReminderTitle": "雷神加速器关闭提醒",
+      "closeReminderMessage": "您已关闭雷神加速器客户端，请前往雷神小程序确认是否已关闭加速服务，避免闲置消耗时长",
+      "actionUrl": "",
+      "logPaths": []
     }
   ]
 }
