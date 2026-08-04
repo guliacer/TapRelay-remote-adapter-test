@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "2026.08.04.4",
+  "version": "2026.08.04.5",
   "adapters": [
     {
       "appKey": "remote-adapter-demo",
@@ -36,6 +36,7 @@
       "closeReminderEnabled": true,
       "imageNames": ["leigod.exe"],
       "installRoots": ["%PROGRAMFILES(X86)%\\LeiGod_Acc"],
+      "lifecycleMode": "leigod-client",
       "notifyOnSessionEnding": true,
       "closeReminderTitle": "雷神加速器关闭提醒",
       "closeReminderMessage": "您已关闭雷神加速器客户端，请前往雷神小程序确认是否已关闭加速服务，避免闲置消耗时长",

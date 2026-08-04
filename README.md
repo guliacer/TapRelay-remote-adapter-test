@@ -48,10 +48,11 @@ success, failure, permission, question, cancellation, and duplicate filtering
 semantics.
 
 The catalog also supports a data-only close reminder rule. The `leigod` rule
-matches only `leigod.exe` below `%PROGRAMFILES(X86)%\\LeiGod_Acc`, so another
-same-named executable in a different directory cannot trigger it. The PC binary
-uses WMI process start/stop events, a bounded polling fallback, and the Windows
-session-ending event. Its notification title and body are defined in the rule;
+matches only the `-launch` client process of `leigod.exe` below
+`%PROGRAMFILES(X86)%\\LeiGod_Acc`; the no-argument bootstrap process,
+`leigod_launcher.exe`, and Electron `--type=` children are ignored. A visible
+client-window close is also detected by the bounded polling fallback. Its
+notification title and body are defined in the rule;
 `actionUrl` is optional and must be an official `https://` or `weixin://` URI.
 For a locally supplied official mini-program deep link, set
 `TAPRELAY_LEIGOD_MINIPROGRAM_URL`; an empty value keeps the reminder functional
