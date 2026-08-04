@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "2026.08.04.1",
+  "version": "2026.08.04.2",
   "adapters": [
     {
       "appKey": "remote-adapter-demo",
@@ -18,6 +18,15 @@
       "taskIdGroup": "taskId",
       "statusGroup": "status",
       "messageGroup": "message"
+    },
+    {
+      "appKey": "workbuddy",
+      "displayName": "WorkBuddy",
+      "brandColor": "#6351F1",
+      "iconPath": "icons/workbuddy.png",
+      "parser": "workbuddy-acp",
+      "recursive": true,
+      "logPaths": ["%USERPROFILE%\\.workbuddy\\logs\\*.log"]
     }
   ]
 }
