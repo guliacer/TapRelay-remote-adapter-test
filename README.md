@@ -8,6 +8,15 @@ Default catalog URL:
 
 `https://github.com/guliacer/TapRelay-remote-adapter-test/raw/refs/heads/main/catalog.json`
 
+The same repository also publishes the declarative version manifest used by the
+PC and Android update buttons:
+
+`https://github.com/guliacer/TapRelay-remote-adapter-test/raw/refs/heads/main/version.json`
+
+The manifest contains `version`, `downloadUrl`, and optional `releaseNotes`.
+It is only surfaced when its version is newer than the caller's installed
+version; a missing or invalid manifest never blocks notification delivery.
+
 ## Local smoke test
 
 Create the configured test log and append one line per event:
