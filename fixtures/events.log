@@ -1,0 +1,4 @@
+task=demo-001;status=waiting;message=Waiting for user action
+task=demo-001;status=done;message=Demo task completed
+task=demo-002;status=error;message=Demo task failed
+task=demo-003;status=stop;message=Demo task stopped
