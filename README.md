@@ -39,6 +39,14 @@ Add a validated rule to `catalog.json` through a pull request. A rule must provi
 - a bounded regular expression with named `taskId`, `status`, and `message` captures;
 - mappings for both `completed` and `failed`, plus `waiting` or `stopped` when the application exposes them.
 
+The catalog also supports the allow-listed `parser: "workbuddy-acp"` rule for
+WorkBuddy's ACP JSON-over-log format. It is still data-only: the installed TapRelay
+binary owns the parser, while GitHub can update its watched log paths and activation
+without shipping a new executable. The WorkBuddy rule uses
+`%USERPROFILE%\\.workbuddy\\logs\\*.log` recursively and preserves the built-in
+success, failure, permission, question, cancellation, and duplicate filtering
+semantics.
+
 After the pull request is merged, a running TapRelay instance checks the raw catalog
 every five minutes. It applies a valid change without restart or repackaging. If the
 network is unavailable or the catalog fails validation, the last valid local cache
