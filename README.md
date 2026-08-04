@@ -1,0 +1,40 @@
+# TapRelay Remote Adapter Test Catalog
+
+This repository is a declarative adapter fixture for TapRelay. The PC client reads
+`catalog.json` from the raw GitHub URL and interprets the rules locally. It never
+downloads or executes DLL, EXE, PowerShell, JavaScript, or other program code.
+
+Default catalog URL:
+
+`https://raw.githubusercontent.com/guliacer/TapRelay-remote-adapter-test/main/catalog.json`
+
+## Local smoke test
+
+Create the configured test log and append one line per event:
+
+```powershell
+$logRoot = Join-Path $env:TEMP 'TapRelayRemoteAdapterDemo'
+New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
+Add-Content -LiteralPath (Join-Path $logRoot 'events.log') -Value 'task=demo-100;status=done;message=Remote catalog loaded'
+```
+
+The application chip should be named `Remote Adapter Demo`. The same task ID and
+status are emitted only once even when the log is scanned more than once.
+
+## Submitting an adapter change
+
+Add a validated rule to `catalog.json` through a pull request. A rule must provide:
+
+- a new stable `appKey`, display name, brand color, and a real 256x256 PNG icon referenced by a relative `iconPath`;
+- one or more `%LOCALAPPDATA%`, `%APPDATA%`, `%TEMP%`, `%USERPROFILE%`, `%PROGRAMDATA%`, `%PROGRAMFILES%`, or `%PROGRAMFILES(X86)%` log paths;
+- a bounded regular expression with named `taskId`, `status`, and `message` captures;
+- mappings for both `completed` and `failed`, plus `waiting` or `stopped` when the application exposes them.
+
+After the pull request is merged, a running TapRelay instance checks the raw catalog
+every five minutes. It applies a valid change without restart or repackaging. If the
+network is unavailable or the catalog fails validation, the last valid local cache
+continues to be used.
+
+This repository is a test source, not a general code execution channel. Applications
+requiring custom database parsing, IPC, process hooks, or protocol logic still need a
+normal TapRelay program update.

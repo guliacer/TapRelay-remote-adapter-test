@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "version": "2026.08.04.1",
+  "adapters": [
+    {
+      "appKey": "remote-adapter-demo",
+      "displayName": "Remote Adapter Demo",
+      "brandColor": "#2E8B57",
+      "iconPath": "icons/remote-adapter-demo.png",
+      "logPaths": ["%TEMP%\\TapRelayRemoteAdapterDemo\\events.log"],
+      "linePattern": "task=(?<taskId>[^;]+);status=(?<status>[^;]+);message=(?<message>.*)",
+      "statusMap": {
+        "waiting": "waiting",
+        "done": "completed",
+        "error": "failed",
+        "stop": "stopped"
+      },
+      "taskIdGroup": "taskId",
+      "statusGroup": "status",
+      "messageGroup": "message"
+    }
+  ]
+}
