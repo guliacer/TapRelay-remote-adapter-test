@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "version": "2026.08.04.5",
+  "version": "2026.08.05.1",
   "adapters": [
     {
       "appKey": "remote-adapter-demo",
       "displayName": "Remote Adapter Demo",
       "brandColor": "#2E8B57",
       "iconPath": "icons/remote-adapter-demo.png",
-      "logPaths": ["%TEMP%\\TapRelayRemoteAdapterDemo\\events.log"],
+      "logPaths": ["%TEMP%\\\\TapRelayRemoteAdapterDemo\\\\events.log"],
+      "processNames": ["RemoteAdapterDemo"],
       "linePattern": "task=(?<taskId>[^;]+);status=(?<status>[^;]+);message=(?<message>.*)",
       "statusMap": {
         "waiting": "waiting",
@@ -26,20 +27,21 @@
       "iconPath": "icons/workbuddy.png",
       "parser": "workbuddy-acp",
       "recursive": true,
-      "logPaths": ["%USERPROFILE%\\.workbuddy\\logs\\*.log"]
+      "logPaths": ["%USERPROFILE%\\\\.workbuddy\\\\logs\\\\*.log"],
+      "processNames": ["WorkBuddy.exe"]
     },
     {
       "appKey": "leigod",
-      "displayName": "雷神加速器",
+      "displayName": "\u96f7\u795e\u52a0\u901f\u5668",
       "brandColor": "#FF7A00",
       "iconPath": "icons/leigod.png",
       "closeReminderEnabled": true,
       "imageNames": ["leigod.exe"],
-      "installRoots": ["%PROGRAMFILES(X86)%\\LeiGod_Acc"],
+      "installRoots": ["%PROGRAMFILES(X86)%\\\\LeiGod_Acc"],
       "lifecycleMode": "leigod-client",
       "notifyOnSessionEnding": true,
-      "closeReminderTitle": "雷神加速器关闭提醒",
-      "closeReminderMessage": "您已关闭雷神加速器客户端，请前往雷神小程序确认是否已关闭加速服务，避免闲置消耗时长",
+      "closeReminderTitle": "\u96f7\u795e\u52a0\u901f\u5668\u5173\u95ed\u63d0\u9192",
+      "closeReminderMessage": "\u60a8\u5df2\u5173\u95ed\u96f7\u795e\u52a0\u901f\u5668\u5ba2\u6237\u7aef\uff0c\u8bf7\u524d\u5f80\u96f7\u795e\u5c0f\u7a0b\u5e8f\u786e\u8ba4\u662f\u5426\u5df2\u5173\u95ed\u52a0\u901f\u670d\u52a1\uff0c\u907f\u514d\u95f2\u7f6e\u6d88\u8017\u65f6\u957f",
       "actionUrl": "",
       "logPaths": []
     }
