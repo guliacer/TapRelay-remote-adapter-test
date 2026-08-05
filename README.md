@@ -36,6 +36,7 @@ Add a validated rule to `catalog.json` through a pull request. A rule must provi
 
 - a new stable `appKey`, display name, brand color, and a real 256x256 PNG icon referenced by a relative `iconPath`;
 - one or more `%LOCALAPPDATA%`, `%APPDATA%`, `%TEMP%`, `%USERPROFILE%`, `%PROGRAMDATA%`, `%PROGRAMFILES%`, or `%PROGRAMFILES(X86)%` log paths;
+- one or more `processNames` entries matching the adapted application's executable name; TapRelay only consumes the rule while one of these processes is running;
 - a bounded regular expression with named `taskId`, `status`, and `message` captures;
 - mappings for both `completed` and `failed`, plus `waiting` or `stopped` when the application exposes them.
 
@@ -45,7 +46,7 @@ binary owns the parser, while GitHub can update its watched log paths and activa
 without shipping a new executable. The WorkBuddy rule uses
 `%USERPROFILE%\\.workbuddy\\logs\\*.log` recursively and preserves the built-in
 success, failure, permission, question, cancellation, and duplicate filtering
-semantics.
+semantics. Its `processNames` gate is `WorkBuddy.exe`.
 
 The catalog also supports a data-only close reminder rule. The `leigod` rule
 matches only the `-launch` client process of `leigod.exe` below
