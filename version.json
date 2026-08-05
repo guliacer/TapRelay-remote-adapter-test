@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "downloadUrl": "https://github.com/guliacer/TapRelay-remote-adapter-test/releases",
-  "releaseNotes": "当前版本已是最新版本。"
+  "releaseNotes": "远程适配规则支持按应用进程门控，未运行应用不会产生通知"
 }
