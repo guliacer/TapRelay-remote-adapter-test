@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "2026.08.05.1",
+  "version": "2026.08.07.1",
   "adapters": [
     {
       "appKey": "remote-adapter-demo",
@@ -44,6 +44,13 @@
       "closeReminderMessage": "\u60a8\u5df2\u5173\u95ed\u96f7\u795e\u52a0\u901f\u5668\u5ba2\u6237\u7aef\uff0c\u8bf7\u524d\u5f80\u96f7\u795e\u5c0f\u7a0b\u5e8f\u786e\u8ba4\u662f\u5426\u5df2\u5173\u95ed\u52a0\u901f\u670d\u52a1\uff0c\u907f\u514d\u95f2\u7f6e\u6d88\u8017\u65f6\u957f",
       "actionUrl": "",
       "logPaths": []
+    },
+    {
+      "appKey": "comfyui",
+      "displayName": "ComfyUI",
+      "brandColor": "#F2FF59",
+      "iconPath": "icons/comfyui.png",
+      "requiresProgramUpdate": true
     }
   ]
 }

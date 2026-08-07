@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "downloadUrl": "https://github.com/guliacer/TapRelay-remote-adapter-test/releases",
-  "releaseNotes": "远程适配规则支持按应用进程门控，未运行应用不会产生通知"
+  "releaseNotes": "新增 ComfyUI 官方品牌标识（霓虹黄 #F2FF59）；远程适配规则支持按应用进程门控，未运行应用不会产生通知"
 }
